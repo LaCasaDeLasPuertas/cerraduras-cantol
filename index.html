@@ -126,145 +126,41 @@
 
 
 
-<!-- Sección general -->
+<!-- Sección de productos -->
 <section class="py-4 bg-white">
   <div class="container mx-auto px-6">
-    <!-- Layout principal: filtros izquierda + productos derecha -->
-    <div class="flex flex-col lg:flex-row gap-6">
-      <!-- FILTROS A LA IZQUIERDA -->
-<aside class="hidden lg:block sticky top-24 self-start w-full max-w-[320px]">
-  <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-5 space-y-6">
-    <h2 class="text-xl font-semibold text-gray-900 border-b pb-3">Filtrar por</h2>
 
-    <!-- Tipo -->
-    <div>
-      <p class="text-sm font-medium text-gray-600 mb-2">Tipo</p>
-      <div class="flex flex-wrap gap-2">
-        <button data-filter="entrada" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 active:scale-[0.98] transition">Entrada</button>
-        <button data-filter="interior" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 active:scale-[0.98] transition">Interior</button>
-        <button data-filter="digital" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 active:scale-[0.98] transition">Digital</button>
-        <button data-filter="accesorios" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 active:scale-[0.98] transition">Accesorios</button>
+    <!-- Contenedor de tarjetas responsivas -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+      
+      <!-- Tarjeta: G60 - Cuadrada (acero) con 20% de descuento -->
+      <div class="bg-white rounded-lg shadow shadow-gray-300 overflow-hidden flex md:flex-col max-h-32 md:max-h-none md:h-auto">
+        <!-- Imagen -->
+        <div class="w-1/3 md:w-full aspect-square overflow-hidden">
+          <img src="ce-cuadrada-acero.jpg" alt="ce-cuadrada-acero" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Contenido -->
+        <div class="w-2/3 md:w-full p-2 flex flex-col justify-between text-[12px] leading-snug">
+          <div>
+            <h3 class="font-semibold text-gray-900 text-[13px] mb-0.5">G60 - Cuadrada</h3>
+            <p class="text-gray-500 line-through text-[11px]">S/ 260.00</p>
+            <p class="text-green-700 font-bold text-[13px]">S/ 208.00</p>
+            <p class="text-gray-500 mt-1 text-[11px]">¡Escríbanos YA!</p>
+          </div>
+          <a href="https://wa.me/51948660856?text=Hola! estoy interesado en G60 - Cuadrada en color AC INOX con 20% de descuento"
+            class="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-2 py-1 rounded text-[11px] mt-1 font-medium">
+            <i class="ri-whatsapp-fill mr-1 text-[14px]"></i> WhatsApp
+          </a>
+        </div>
       </div>
-    </div>
 
-    <!-- Color -->
-    <div>
-      <p class="text-sm font-medium text-gray-600 mb-2">Color</p>
-      <div class="flex flex-wrap gap-2">
-        <button data-filter="negro" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Negro</button>
-        <button data-filter="acero" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Acero</button>
-        <button data-filter="dorado" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Dorado</button>
-        <button data-filter="bronce" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Bronce</button>
-        <button data-filter="quemado" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Quemado</button>
-      </div>
-    </div>
+      <!-- Duplica el bloque de arriba para agregar más tarjetas -->
 
-    <!-- Marca -->
-    <div>
-      <p class="text-sm font-medium text-gray-600 mb-2">Marca</p>
-      <div class="flex flex-wrap gap-2">
-        <button data-filter="cantol" data-group="marca" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Cantol</button>
-        <button data-filter="yale" data-group="marca" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Yale</button>
-      </div>
-    </div>
-
-    <!-- Botón limpiar (opcional) -->
-    <div>
-      <button id="clear-filters" class="mt-4 w-full py-2 text-sm font-medium text-red-600 border border-red-300 rounded-md hover:bg-red-50 transition">Limpiar filtros</button>
     </div>
   </div>
-</aside>
+</section>
 
-
- <!-- BOTÓN MOSTRAR FILTROS EN MOBILE -->
-<div class="lg:hidden px-4 mb-4 text-center">
-  <button onclick="toggleMobileFilters()" class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded text-gray-700 hover:bg-gray-100 transition">
-    <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h18M3 10h18M3 16h18" />
-    </svg>
-    Mostrar filtros
-  </button>
-</div>
-
-<!-- FILTROS EN MOBILE (COLAPSABLE) -->
-<div id="mobile-filters" class="lg:hidden mb-6 px-4 hidden">
-  <h2 class="text-lg font-semibold mb-3 text-center">Filtrar por:</h2>
-
-  <!-- Tipo -->
-  <div class="mb-4">
-    <p class="text-sm font-medium text-gray-600 text-center mb-1">Tipo</p>
-    <div class="flex flex-wrap gap-2 justify-center">
-      <button data-filter="entrada" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Entrada</button>
-      <button data-filter="interior" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Interior</button>
-      <button data-filter="digital" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Digital</button>
-      <button data-filter="accesorios" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Accesorios</button>
-    </div>
-  </div>
-
-  <!-- Color -->
-  <div class="mb-4">
-    <p class="text-sm font-medium text-gray-600 text-center mb-1">Color</p>
-    <div class="flex flex-wrap gap-2 justify-center">
-      <button data-filter="negro" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Negro</button>
-      <button data-filter="acero" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Acero</button>
-      <button data-filter="dorado" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Dorado</button>
-      <button data-filter="bronce" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Bronce</button>
-      <button data-filter="quemado" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Quemado</button>
-    </div>
-  </div>
-
-  <!-- Marca -->
-  <div>
-    <p class="text-sm font-medium text-gray-600 text-center mb-1">Marca</p>
-    <div class="flex flex-wrap gap-2 justify-center">
-      <button data-filter="cantol" data-group="marca" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Cantol</button>
-      <button data-filter="yale" data-group="marca" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Yale</button>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-      <!-- PRODUCTOS A LA DERECHA -->
-      <div class="flex-1">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 lg:gap-10">
-
-     <!-- Tarjeta: G60 - Cuadrada (acero) con 20% de descuento -->
-<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
-  <div class="relative aspect-square overflow-hidden">
-    <img src="ce-cuadrada-acero.jpg" alt="ce-cuadrada-acero" class="w-full h-full object-cover">
-  </div>
-  <div class="p-3 sm:p-2 flex flex-col flex-grow">
-    <div class="hidden">
-      <span class="entrada">ENTRADA</span>
-      <span class="acero">AC INOX</span>
-      <span class="cantol">CANTOL</span>
-    </div>
-    <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">
-      G60 - Cuadrada
-    </h3>
-
-    <!-- Precios con descuento -->
-    <div class="mb-1">
-      <p class="text-[13px] sm:text-[16px] text-gray-500 line-through">S/ 260.00</p>
-      <p class="text-[14px] sm:text-[18px] font-bold text-green-700">S/ 208.00</p>
-    </div>
-
-    <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">
-      ¡Escríbanos YA para más detalles del producto!
-    </p>
-    <div class="flex justify-center sm:justify-start">
-      <a href="https://wa.me/51948660856?text=Hola! estoy interesado en G60 - Cuadrada en color AC INOX con 20% de descuento"
-        class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
-        <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
-      </a>
-    </div>
-  </div>
-</div>
 
 
 
