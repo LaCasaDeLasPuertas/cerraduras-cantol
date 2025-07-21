@@ -233,25 +233,36 @@
       <div class="flex-1">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 lg:gap-10">
 
-     <!-- Tarjeta horizontal exclusiva para mobile -->
-<div class="md:hidden bg-white rounded-lg shadow shadow-gray-300 flex overflow-hidden mb-6 max-h-40">
-  <!-- Imagen cuadrada un poco más grande -->
-  <div class="w-2/5 aspect-square overflow-hidden">
-    <img src=".ce-cuadrada-acero.jpg" alt="ce-cuadrada-acero" class="w-full h-full object-cover">
+     <!-- Tarjeta: G60 - Cuadrada (acero) con 20% de descuento -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/ce-cuadrada-acero.jpg" alt="ce-cuadrada-acero" class="w-full h-full object-cover">
   </div>
-
-  <!-- Info con texto más grande -->
-  <div class="w-3/5 p-3 flex flex-col justify-between text-[13px] leading-snug">
-    <div>
-      <h3 class="font-semibold text-gray-900 text-[15px] mb-1">G60 - Cuadrada</h3>
-      <p class="text-gray-500 line-through text-[12px]">S/ 260.00</p>
-      <p class="text-green-700 font-bold text-[15px]">S/ 208.00</p>
-      <p class="text-gray-500 mt-1 text-[12px]">¡Escríbanos YA!</p>
+  <div class="p-3 sm:p-2 flex flex-col flex-grow">
+    <div class="hidden">
+      <span class="entrada">ENTRADA</span>
+      <span class="acero">AC INOX</span>
+      <span class="cantol">CANTOL</span>
     </div>
-    <a href="https://wa.me/51948660856?text=Hola! estoy interesado en G60 - Cuadrada en color AC INOX con 20% de descuento"
-       class="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded text-[12px] mt-1 font-medium">
-      <i class="ri-whatsapp-fill mr-1 text-[15px]"></i> WhatsApp
-    </a>
+    <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">
+      G60 - Cuadrada
+    </h3>
+
+    <!-- Precios con descuento -->
+    <div class="mb-1">
+      <p class="text-[13px] sm:text-[16px] text-gray-500 line-through">S/ 260.00</p>
+      <p class="text-[14px] sm:text-[18px] font-bold text-green-700">S/ 208.00</p>
+    </div>
+
+    <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">
+      ¡Escríbanos YA para más detalles del producto!
+    </p>
+    <div class="flex justify-center sm:justify-start">
+      <a href="https://wa.me/51948660856?text=Hola! estoy interesado en G60 - Cuadrada en color AC INOX con 20% de descuento"
+        class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+        <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+      </a>
+    </div>
   </div>
 </div>
 
