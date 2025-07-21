@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Cerraduras - La Casa de las Puertas</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Remix Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+
+  <!-- Tu hoja de estilos -->
+  <link rel="stylesheet" href="css/estilos.css" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#8c9b76',
+            secondary: '#a67c52',
+          },
+          borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            DEFAULT: '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-gray-50 font-[Montserrat]">
+
+<!-- Header con botón de WhatsApp y menú mobile -->
+<header class="w-full z-50 bg-[#0d0d0d] text-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-16 py-4 flex justify-between items-center font-['Montserrat']">
+    
+    <!-- Logo sin enlace -->
+    <span class="text-xl text-white">La Casa de las Puertas</span>
+    
+    <!-- Botón de WhatsApp Desktop -->
+    <div class="hidden md:block">
+      <a href="https://wa.me/51948660856?text=Hola%2C+quiero+cotizar+cerraduras+para+mi+casa"
+         class="flex items-center border border-white px-4 py-2 rounded-full text-white text-sm hover:bg-white hover:text-green-700 transition font-semibold">
+        <i class="ri-whatsapp-fill mr-2 text-lg"></i> Cotiza por WhatsApp
+      </a>
+    </div>
+
+    <!-- Botón menú mobile -->
+    <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+      <i class="ri-menu-line ri-lg"></i>
+    </button>
+  </div>
+
+  <!-- Menú desplegable mobile (solo WhatsApp) -->
+  <nav id="mobile-menu" class="hidden bg-[#0d0d0d] text-white px-6 py-4 font-['Montserrat']">
+    <a href="https://wa.me/51948660856?text=Hola%2C+quiero+cotizar+cerraduras+para+mi+casa"
+       class="block text-sm border border-white rounded-full px-4 py-2 text-white hover:bg-white hover:text-green-700 transition text-center">
+      <i class="ri-whatsapp-fill mr-2 text-lg"></i> Cotiza por WhatsApp
+    </a>
+  </nav>
+</header>
+
+<script>
+  document.getElementById('mobile-menu-button').addEventListener('click', function () {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+
+<script>
+  // Script para abrir/cerrar el menú mobile
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+
+
+
+
+<!-- Banner 20% Descuento con badge junto al subtítulo -->
+<section class="py-12 bg-gradient-to-r from-green-700 to-green-500 flex items-center justify-center">
+  <div class="container mx-auto px-6 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+      ¡Hasta 20% de Descuento en Cerraduras CANTOL!
+    </h1>
+    
+    <!-- Subtítulo + Badge en una sola línea centrada -->
+    <div class="flex justify-center items-center flex-wrap gap-2 mb-6">
+      <p class="text-lg md:text-xl text-white opacity-90">
+        Promoción válida solo por Fiestas Patrias, <strong>hasta el 31 de julio</strong>.
+      </p>
+      <div class="bg-red-600 text-white text-sm font-bold px-4 py-1 rounded-full shadow-md animate-bounce">
+        ¡Últimos días!
+      </div>
+    </div>
+    
+    <a href="https://wa.me/51948660856?text=Hola%2C+quiero+aprovechar+el+20%25+de+descuento+en+cerraduras"
+       class="inline-block bg-white text-green-700 font-semibold px-6 py-3 rounded-full shadow hover:bg-green-100 transition">
+      ¡Cotiza por WhatsApp!
+    </a>
+  </div>
+</section>
+
+
+
+
+<!-- Sección general -->
+<section class="py-4 bg-white">
+  <div class="container mx-auto px-6">
+    <!-- Layout principal: filtros izquierda + productos derecha -->
+    <div class="flex flex-col lg:flex-row gap-6">
+      <!-- FILTROS A LA IZQUIERDA -->
+<aside class="hidden lg:block sticky top-24 self-start w-full max-w-[320px]">
+  <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-5 space-y-6">
+    <h2 class="text-xl font-semibold text-gray-900 border-b pb-3">Filtrar por</h2>
+
+    <!-- Tipo -->
+    <div>
+      <p class="text-sm font-medium text-gray-600 mb-2">Tipo</p>
+      <div class="flex flex-wrap gap-2">
+        <button data-filter="entrada" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 active:scale-[0.98] transition">Entrada</button>
+        <button data-filter="interior" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 active:scale-[0.98] transition">Interior</button>
+        <button data-filter="digital" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 active:scale-[0.98] transition">Digital</button>
+        <button data-filter="accesorios" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 active:scale-[0.98] transition">Accesorios</button>
+      </div>
+    </div>
+
+    <!-- Color -->
+    <div>
+      <p class="text-sm font-medium text-gray-600 mb-2">Color</p>
+      <div class="flex flex-wrap gap-2">
+        <button data-filter="negro" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Negro</button>
+        <button data-filter="acero" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Acero</button>
+        <button data-filter="dorado" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Dorado</button>
+        <button data-filter="bronce" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Bronce</button>
+        <button data-filter="quemado" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Quemado</button>
+      </div>
+    </div>
+
+    <!-- Marca -->
+    <div>
+      <p class="text-sm font-medium text-gray-600 mb-2">Marca</p>
+      <div class="flex flex-wrap gap-2">
+        <button data-filter="cantol" data-group="marca" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Cantol</button>
+        <button data-filter="yale" data-group="marca" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Yale</button>
+      </div>
+    </div>
+
+    <!-- Botón limpiar (opcional) -->
+    <div>
+      <button id="clear-filters" class="mt-4 w-full py-2 text-sm font-medium text-red-600 border border-red-300 rounded-md hover:bg-red-50 transition">Limpiar filtros</button>
+    </div>
+  </div>
+</aside>
+
+
+ <!-- BOTÓN MOSTRAR FILTROS EN MOBILE -->
+<div class="lg:hidden px-4 mb-4 text-center">
+  <button onclick="toggleMobileFilters()" class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded text-gray-700 hover:bg-gray-100 transition">
+    <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h18M3 10h18M3 16h18" />
+    </svg>
+    Mostrar filtros
+  </button>
+</div>
+
+<!-- FILTROS EN MOBILE (COLAPSABLE) -->
+<div id="mobile-filters" class="lg:hidden mb-6 px-4 hidden">
+  <h2 class="text-lg font-semibold mb-3 text-center">Filtrar por:</h2>
+
+  <!-- Tipo -->
+  <div class="mb-4">
+    <p class="text-sm font-medium text-gray-600 text-center mb-1">Tipo</p>
+    <div class="flex flex-wrap gap-2 justify-center">
+      <button data-filter="entrada" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Entrada</button>
+      <button data-filter="interior" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Interior</button>
+      <button data-filter="digital" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Digital</button>
+      <button data-filter="accesorios" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Accesorios</button>
+    </div>
+  </div>
+
+  <!-- Color -->
+  <div class="mb-4">
+    <p class="text-sm font-medium text-gray-600 text-center mb-1">Color</p>
+    <div class="flex flex-wrap gap-2 justify-center">
+      <button data-filter="negro" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Negro</button>
+      <button data-filter="acero" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Acero</button>
+      <button data-filter="dorado" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Dorado</button>
+      <button data-filter="bronce" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Bronce</button>
+      <button data-filter="quemado" data-group="color" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Quemado</button>
+    </div>
+  </div>
+
+  <!-- Marca -->
+  <div>
+    <p class="text-sm font-medium text-gray-600 text-center mb-1">Marca</p>
+    <div class="flex flex-wrap gap-2 justify-center">
+      <button data-filter="cantol" data-group="marca" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Cantol</button>
+      <button data-filter="yale" data-group="marca" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Yale</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+      <!-- PRODUCTOS A LA DERECHA -->
+      <div class="flex-1">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 lg:gap-10">
+
+     <!-- Tarjeta horizontal exclusiva para mobile -->
+<div class="md:hidden bg-white rounded-lg shadow shadow-gray-300 flex overflow-hidden mb-6 max-h-32">
+  <!-- Imagen cuadrada reducida -->
+  <div class="w-1/3 aspect-square overflow-hidden">
+    <img src="./img/ce-cuadrada-acero.jpg" alt="ce-cuadrada-acero" class="w-full h-full object-cover">
+  </div>
+
+  <!-- Info reducida -->
+  <div class="w-2/3 p-2 flex flex-col justify-between text-[12px] leading-snug">
+    <div>
+      <h3 class="font-semibold text-gray-900 text-[13px] mb-0.5">G60 - Cuadrada</h3>
+      <p class="text-gray-500 line-through text-[11px]">S/ 260.00</p>
+      <p class="text-green-700 font-bold text-[13px]">S/ 208.00</p>
+      <p class="text-gray-500 mt-1 text-[11px]">¡Escríbanos YA!</p>
+    </div>
+    <a href="https://wa.me/51948660856?text=Hola! estoy interesado en G60 - Cuadrada en color AC INOX con 20% de descuento"
+       class="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-2 py-1 rounded text-[11px] mt-1 font-medium">
+      <i class="ri-whatsapp-fill mr-1 text-[14px]"></i> WhatsApp
+    </a>
+  </div>
+</div>
+
+
+
+<!-- Tarjeta: G60 - Cuadrada (negro) -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/ce-cuadrada-negro.jpg" alt="ce-cuadrada-negro" class="w-full h-full object-cover">
+    </div>
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <div class="hidden"><span class="entrada">ENTRADA</span><span class="negro">NEGRO MATE</span><span class="cantol">CANTOL</span></div>
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">G60 - Cuadrada</h3>
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 260.00</p>
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en G60 - Cuadrada en color NEGRO MATE" class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium"><i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp</a>
+        </div>
+    </div>
+</div>
+
+<!-- Tarjeta: CS - S900 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/ce-S900.jpg" alt="ce-S900" class="w-full h-full object-cover">
+    </div>
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <div class="hidden"><span class="entrada">ENTRADA</span><span class="cantol">CANTOL</span></div>
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">CS - S900</h3>
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 99.00</p>
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en CS - S900 en color CANTOL" class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium"><i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp</a>
+        </div>
+    </div>
+</div>
+
+<!-- Tarjeta: G60 - Clasico -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/ce-clasica.jpg" alt="ce-clasica" class="w-full h-full object-cover">
+    </div>
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <div class="hidden"><span class="entrada">ENTRADA</span><span class="dorado">BRONCE PULIDO</span><span class="cantol">CANTOL</span></div>
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">G60 - Clasico</h3>
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 285.00</p>
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en G60 - Clasico en color BRONCE PULIDO" class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium"><i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp</a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta: G60 - Onda -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/ce-onda.jpg" alt="ce-onda" class="w-full h-full object-cover">
+    </div>
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <div class="hidden"><span class="entrada">ENTRADA</span><span class="acero">AC INOX</span><span class="cantol">CANTOL</span></div>
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">G60 - Onda</h3>
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 250.00</p>
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en G60 - Onda en color AC INOX" class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium"><i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp</a>
+        </div>
+    </div>
+</div>
+
+<!-- Tarjeta: G60 - Redonda -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/ce-redonda.jpg" alt="ce-redonda" class="w-full h-full object-cover">
+    </div>
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <div class="hidden"><span class="entrada">ENTRADA</span><span class="acero">AC INOX</span><span class="cantol">CANTOL</span></div>
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">G60 - Redonda</h3>
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 240.00</p>
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en G60 - Redonda en color AC INOX" class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium"><i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp</a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta: G60 - Estandar (negro) -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/ce-estandar-negro.jpg" alt="ce-estandar-negro" class="w-full h-full object-cover">
+    </div>
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <div class="hidden"><span class="entrada">ENTRADA</span><span class="negro">NEGRO MATE</span><span class="cantol">CANTOL</span></div>
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">G60 - Estandar</h3>
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 240.00</p>
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en G60 - Estandar en color NEGRO MATE" class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium"><i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp</a>
+        </div>
+    </div>
+</div>
+     
+<!-- Tarjeta: G60 - Estandar (acero) -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/ce-estandar.jpg" alt="ce-estandar" class="w-full h-full object-cover">
+    </div>
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <div class="hidden"><span class="entrada">ENTRADA</span><span class="acero">AC INOX</span><span class="cantol">CANTOL</span></div>
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">G60 - Estandar</h3>
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 240.00</p>
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en G60 - Estandar en color AC INOX" class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium"><i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp</a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 6 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/ce-moderna-bp.jpg" alt="ce-moderna-bp" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="entrada">ENTRADA</span>
+            <span class="dorado">BRONCE PULIDO</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">G60 - Moderna</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 285.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en G60 - Moderna en color BRONCE PULIDO" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 7 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/ce-moderna-ba.jpg" alt="ce-moderna-ba" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="entrada">ENTRADA</span>
+            <span class="bronce">BRONCE ANTIGUO</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">G60 - Moderna</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 285.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en G60 - Moderna en color BRONCE ANTIGUO" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 7 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/ce-bold-estandar.jpg" alt="ce-bold" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="entrada">ENTRADA</span>
+            <span class="digital">DIGITAL</span>
+            <span class="acero">AC INOX</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Cantol bold</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 1,599.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola%21%20estoy%20interesado%20en%20la%20cerradura%20inteligente%20Cantol%20Bold%2060%21"
+   class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+   <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+</a>
+
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 7 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/ce-bold-cuadrada.jpg" alt="ce-bold" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="digital">DIGITAL</span>
+            <span class="entrada">ENTRADA</span>
+            <span class="acero">AC INOX</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Cantol bold</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 1,599.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+           <a href="https://wa.me/51948660856?text=Hola%21%20estoy%20interesado%20en%20la%20cerradura%20inteligente%20Cantol%20Bold%2060%21"
+   class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+   <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+</a>
+
+        </div>
+    </div>
+</div>
+<!-- Tarjeta: Tranca -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/ce-tranca.jpg" alt="ce-tranca" class="w-full h-full object-cover">
+    </div>
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <div class="hidden"><span class="entrada">ENTRADA</span><span class="cantol">CANTOL</span></div>
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Tranca</h3>
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 199.00</p>
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en comprar Tranca CANTOL" class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium"><i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- Tarjeta 12 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-bola50.jpg" alt="c-bola50" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="negro">NEGRO MATE</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Perilla</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 45.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Perilla en color NEGRO MATE" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 13 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-bola60.jpg" alt="c-bola60" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="acero">AC INOX</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Perilla</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 45.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Perilla en color AC INOX" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 14 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-bola70.jpg" alt="c-bola70" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="dorado">BRONCE PULIDO</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Perilla</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 45.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Perilla en color BRONCE PULIDO" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+
+     <!-- Tarjeta 15 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-bola80.jpg" alt="c-bola80" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="bronce">BRONCE ANTIGUO</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Perilla</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 45.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Perilla en color BRONCE ANTIGUO" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 16 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-dana50.jpg" alt="c-dana50" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="negro">NEGRO MATE</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Danna</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Danna en color NEGRO MATE" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 17 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-dana60.jpg" alt="c-dana60" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="acero">AC INOX</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Danna</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Danna en color AC INOX" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 18 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-dana70.jpg" alt="c-dana70" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="dorado">BRONCE PULIDO</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Danna</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Danna en color BRONCE PULIDO" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 19 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-dana80.jpg" alt="c-dana80" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="bronce">BRONCE ANTIGUO</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Danna</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Danna en color BRONCE ANTIGUO" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+ <!-- Tarjeta 20 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-allegra50.jpg" alt="c-allegra50" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="negro">NEGRO MATE</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Allegra</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Allegra en color NEGRO MATE" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 21 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-allegra60.jpg" alt="c-allegra60" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="acero">AC INOX</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Allegra</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Allegra en color AC INOX" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 22 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-allegra70.jpg" alt="c-allegra70" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="dorado">BRONCE PULIDO</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Allegra</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Allegra en color BRONCE PULIDO"  
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 23 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-allegra80.jpg" alt="c-allegra80" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="bronce">BRONCE ANTIGUO</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Allegra</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Allegra en color BRONCE ANTIGUO" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+                  
+ <!-- Tarjeta 24 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-brisa60.jpg" alt="c-brisa60" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="acero">AC INOX</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Brisa</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Brisa en color AC INOX" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 25 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-brisa70.jpg" alt="c-brisa70" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="dorado">BRONCE PULIDO</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Brisa</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Brisa en color BRONCE PULIDO"  
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 26 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-brisa80.jpg" alt="c-brisa80" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="bronce">BRONCE ANTIGUO</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Brisa</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Brisa en color BRONCE ANTIGUO" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+ <!-- Tarjeta 27 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-flavia60.jpg" alt="c-flavia60" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="acero">AC INOX</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Flavia</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Flavia en color AC INOX"  
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 28 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-flavia70.jpg" alt="c-flavia70" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="dorado">BRONCE PULIDO</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Flavia</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Flavia en color BRONCE PULIDO"   
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 29 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-flavia80.jpg" alt="c-flavia80" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="bronce">BRONCE ANTIGUO</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Flavia</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Flavia en color BRONCE ANTIGUO"   
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>                 
+ <!-- Tarjeta 30 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-clara60.jpg" alt="c-clara60" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="acero">AC INOX</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Clara</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Clara en color AC INOX"   
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 31 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-clara80.jpg" alt="c-clara80" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="bronce">BRONCE ANTIGUO</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Clara</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Clara en color BRONCE ANTIGUO"
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Tarjeta 26 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+    <!-- Imagen cuadrada con etiqueta -->
+    <div class="relative aspect-square overflow-hidden">
+        <img src="./img/c-clara90.jpg" alt="c-clara90" class="w-full h-full object-cover">
+        
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-3 sm:p-2 flex flex-col flex-grow">
+        <!-- Etiquetas ocultas para filtros -->
+        <div class="hidden">
+            <span class="interior">INTERIOR</span>
+            <span class="quemado">BRONCE QUEMADO</span>
+            <span class="cantol">CANTOL</span>
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Modelo Clara</h3>
+
+        <!-- Precio -->
+        <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 95.00</p>
+
+        <!-- Mensaje -->
+        <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+
+        <!-- Botón (centrado en mobile, alineado en desktop) -->
+        <div class="flex justify-center sm:justify-start">
+            <a href="https://wa.me/51948660856?text=Hola! estoy interesado en Modelo Clara en color BRONCE QUEMADO" 
+               class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+                <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</div>    
+
+<!-- Tarjeta 1 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/ac-bisa60.jpg" alt="ac-bisa60" class="w-full h-full object-cover">
+  </div>
+  <div class="p-3 sm:p-2 flex flex-col flex-grow">
+    <div class="hidden">
+      <span class="acero">AC INOX</span>
+      <span class="accesorios">ACCESORIO</span>
+    </div>
+    <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Bisagra 3x3</h3>
+    <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 15.00</p>
+    <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+    <div class="flex justify-center sm:justify-start">
+      <a href="https://wa.me/51948660856?text=Hola%21%20estoy%20interesado%20en%20Bisagra%203x3%20en%20color%20AC%20INOX"
+         class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+        <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Tarjeta 2 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/ac-bisa70.jpg" alt="ac-bisa70" class="w-full h-full object-cover">
+  </div>
+  <div class="p-3 sm:p-2 flex flex-col flex-grow">
+    <div class="hidden">
+      <span class="dorado">BRONCE PULIDO</span>
+      <span class="accesorios">ACCESORIO</span>
+    </div>
+    <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Bisagra 3x3</h3>
+    <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 10.00</p>
+    <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+    <div class="flex justify-center sm:justify-start">
+      <a href="https://wa.me/51948660856?text=Hola%21%20estoy%20interesado%20en%20Bisagra%203x3%20en%20color%20BRONCE%20PULIDO"
+         class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+        <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Tarjeta 3 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/ac-bisa80.jpg" alt="ac-bisa80" class="w-full h-full object-cover">
+  </div>
+  <div class="p-3 sm:p-2 flex flex-col flex-grow">
+    <div class="hidden">
+      <span class="bronce">BRONCE ANTIGUO</span>
+      <span class="accesorios">ACCESORIO</span>
+    </div>
+    <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Bisagra 3x3</h3>
+    <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 10.00</p>
+    <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+    <div class="flex justify-center sm:justify-start">
+      <a href="https://wa.me/51948660856?text=Hola%21%20estoy%20interesado%20en%20Bisagra%203x3%20en%20color%20BRONCE%20ANTIGUO"
+         class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+        <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Tarjeta 4 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/ac-bisa60.jpg" alt="ac-bisa60" class="w-full h-full object-cover">
+  </div>
+  <div class="p-3 sm:p-2 flex flex-col flex-grow">
+    <div class="hidden">
+      <span class="acero">AC INOX</span>
+      <span class="accesorios">ACCESORIO</span>
+    </div>
+    <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Bisagra 3.5x3.5</h3>
+    <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 20.00</p>
+    <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+    <div class="flex justify-center sm:justify-start">
+      <a href="https://wa.me/51948660856?text=Hola%21%20estoy%20interesado%20en%20Bisagra%203.5x3.5%20en%20color%20AC%20INOX"
+         class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+        <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Tarjeta 5 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/ac-bisa70.jpg" alt="ac-bisa70" class="w-full h-full object-cover">
+  </div>
+  <div class="p-3 sm:p-2 flex flex-col flex-grow">
+    <div class="hidden">
+      <span class="dorado">BRONCE PULIDO</span>
+      <span class="accesorios">ACCESORIO</span>
+    </div>
+    <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Bisagra 3.5x3.5</h3>
+    <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 15.00</p>
+    <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+    <div class="flex justify-center sm:justify-start">
+      <a href="https://wa.me/51948660856?text=Hola%21%20estoy%20interesado%20en%20Bisagra%203.5x3.5%20en%20color%20BRONCE%20PULIDO"
+         class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+        <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Tarjeta 6 -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/ac-bisa80.jpg" alt="ac-bisa80" class="w-full h-full object-cover">
+  </div>
+  <div class="p-3 sm:p-2 flex flex-col flex-grow">
+    <div class="hidden">
+      <span class="bronce">BRONCE ANTIGUO</span>
+      <span class="accesorios">ACCESORIO</span>
+    </div>
+    <h3 class="text-[13px] sm:text-[18px] font-semibold text-gray-900 leading-snug mb-1">Bisagra 3.5x3.5</h3>
+    <p class="text-[14px] sm:text-[18px] font-bold text-green-700 mb-1">S/ 15.00</p>
+    <p class="text-[11px] sm:text-[14px] text-gray-500 mb-2">¡Escribanos YA para más detalles del producto!</p>
+    <div class="flex justify-center sm:justify-start">
+      <a href="https://wa.me/51948660856?text=Hola%21%20estoy%20interesado%20en%20Bisagra%203.5x3.5%20en%20color%20BRONCE%20ANTIGUO"
+         class="w-fit flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-2 sm:py-1 rounded transition text-[10px] sm:text-[13px] font-medium">
+        <i class="ri-whatsapp-fill mr-2 text-white text-[12px] sm:text-[16px]"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- No Results -->
+<div id="no-results-message" class="hidden py-16 text-center">
+  <div class="w-20 h-20 mx-auto mb-6 text-gray-300">
+    <i class="ri-search-line ri-3x"></i>
+  </div>
+  <h3 class="text-xl font-semibold mb-2">No se encontraron resultados</h3>
+  <p class="text-gray-600 mb-6">No hay productos que coincidan con los filtros seleccionados.</p>
+  <button id="reset-filters"
+    class="bg-[#1a1a1a] hover:bg-[#333] text-white px-6 py-2 rounded-md transition">
+    Limpiar filtros
+  </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+    
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/51948660856" class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg z-50 transition-all hover:scale-105">
+  <div class="w-6 h-6 flex items-center justify-center">
+    <i class="ri-whatsapp-fill ri-lg"></i>
+  </div>
+</a>
+
+
+
+<!-- Separador visual para dar espacio antes del footer -->
+<div class="h-10 lg:h-16"></div>
+
+<!-- Footer -->
+<footer class="bg-[#1a1a1a] text-white border-t-0">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-16 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      
+      <!-- Información de la empresa -->
+      <div>
+        <h3 class="text-2xl font-bold mb-6">La Casa de las Puertas</h3>
+        <p class="text-gray-300 mb-4 leading-relaxed">
+          Más de 30 años transformando espacios con puertas y cerraduras de calidad superior. Confía en nuestra experiencia y profesionalismo.
+        </p>
+        <div class="flex space-x-4">
+          <a href="https://www.facebook.com/lacasadelaspuertaslima" target="_blank" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+            <i class="ri-facebook-fill"></i>
+          </a>
+          <a href="https://wa.me/51948660856?text=Hola%2C%20estoy%20interesado%20en%20sus%20puertas%20y%20cerraduras." target="_blank" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+            <i class="ri-whatsapp-line"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Información de contacto -->
+      <div>
+        <h3 class="text-xl font-bold mb-6 text-white">Información de Contacto</h3>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <i class="ri-map-pin-line text-green-600 mr-3 mt-1 text-lg"></i>
+            <div>
+              <p class="text-gray-300">Av. Tingo María 1338</p>
+              <p class="text-gray-300">Breña, Lima, Perú</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <i class="ri-phone-line text-green-600 mr-3 text-lg"></i>
+            <p class="text-gray-300">+51 948 660 856</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Horarios de atención -->
+      <div>
+        <h3 class="text-xl font-bold mb-6 text-white">Horarios de Atención</h3>
+        <div class="space-y-3">
+          <div class="flex items-center">
+            <i class="ri-time-line text-green-600 mr-3 text-lg"></i>
+            <div>
+              <p class="text-white font-medium">Lunes a Viernes</p>
+              <p class="text-gray-300 text-sm">7:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <i class="ri-time-line text-green-600 mr-3 text-lg"></i>
+            <div>
+              <p class="text-white font-medium">Sábados</p>
+              <p class="text-gray-300 text-sm">7:00 AM - 1:00 PM</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <i class="ri-time-line text-green-600 mr-3 text-lg"></i>
+            <div>
+              <p class="text-white font-medium">Domingos</p>
+              <p class="text-gray-300 text-sm">Cerrado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Línea divisoria y copyright -->
+    <div class="border-t border-gray-700 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm mb-4 md:mb-0">
+          © 2025 La Casa de las Puertas. Todos los derechos reservados.
+        </p>
+        <div class="flex space-x-6 text-sm">
+          <a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidad</a>
+          <a href="#" class="text-gray-400 hover:text-white transition">Términos de Servicio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="js/funciones.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+:where([class^="ri-"])::before {
+  content: "\f3c2";
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: rgba(226, 232, 240, 0.7);
+  }
+  100% {
+    background-color: rgba(203, 213, 225, 0.9);
+  }
+}
+
+.toast {
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.toast.show {
+  transform: translateY(0);
+}
